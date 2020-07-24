@@ -1,5 +1,4 @@
 import React from "react";
-//import KeyboardEventHandler from "react-keyboard-event-handler";
 const App = () => {
   const [first, setfirst] = React.useState("");
   const [last, setlast] = React.useState("");
@@ -29,7 +28,6 @@ const App = () => {
     console.log("state", state);
   }
   function f(e) {
-    //console.log(selectstate);
     setselectstate(e.target.value);
   }
   function handleEnter(event) {
@@ -60,15 +58,13 @@ const App = () => {
       alert("confirm password Password is incorrect");
     }
   }
-
-  return (
+return (
     console.log(arr, state, selectstate),
     (
       <>
         <div className="firstdiv">
           <form>
-            <label>First Name:</label>
-            <br />
+            <h3 style={{color:"red"}}>firstname</h3>
             <input
               type="text"
               value={first}
@@ -78,9 +74,7 @@ const App = () => {
               onKeyDown={handleEnter}
               required
             ></input>
-            <br />
-            <label>Last Name:</label>
-            <br />
+            <h3 style={{color:"green"}}>lastname</h3>
             <input
               type="text"
               value={last}
@@ -89,9 +83,7 @@ const App = () => {
               onKeyDown={handleEnter}
               required
             ></input>
-            <br />
-            <label>E-mail</label>
-            <br />
+           <h3 style={{color:"orange"}}>Email</h3>
             <input
               type="email"
               value={email}
@@ -100,10 +92,7 @@ const App = () => {
               onKeyDown={handleEnter}
               refs="remail"
             ></input>
-            <br />
-            <br />
-            <label>Password:</label>
-            <br />
+             <h3 style={{color:"brown"}}>password</h3>
             <input
               type="password"
               value={password}
@@ -113,8 +102,7 @@ const App = () => {
               required
             />
             <br />
-            <label>Reset-Password:</label>
-            <br />
+            <h3 style={{color:"#00ff80"}}>Reset password</h3>
             <input
               type="password"
               value={repassword}
@@ -124,8 +112,7 @@ const App = () => {
               onKeyDown={handleEnter}
             />
             <br />
-            <label>Marital Status</label>
-            <br />
+            <h3 style={{color:"#0040ff"}}>Marital status</h3>
             <input
               type="radio"
               name="status"
@@ -135,7 +122,6 @@ const App = () => {
               checked={status == "single"}
             />
             Single
-            <br />
             <input
               type="radio"
               name="status"
@@ -145,7 +131,6 @@ const App = () => {
               checked={status == "married"}
             />
             Married
-            <br />
             <input
               type="radio"
               name="status"
@@ -155,8 +140,7 @@ const App = () => {
             />
             In Relationship
             <br />
-            <label>Choice of Food</label>
-            <br />
+            <h3 style={{color:"#8000ff"}}>Choice of food</h3>
             <input
               type="radio"
               name="food1"
@@ -164,8 +148,7 @@ const App = () => {
               onChange={(e) => setfood(food.concat([e.target.value]))}
               checked={food.includes("icecream")}
             />
-            icecreamcakes
-            <br />
+            icecream
             <input
               type="radio"
               name="food2"
@@ -174,25 +157,22 @@ const App = () => {
               checked={food.includes("Briyani")}
             />
             briyani
-            <br />
             <input
               type="radio"
               name="food3"
-              value="Kongura Chicken"
+              value="noodles"
               onChange={(e) => setfood(food.concat([e.target.value]))}
-              checked={food.includes("Kongura Chicken")}
+              checked={food.includes("noodles")}
             />
-            KonguraChicken
-            <br />
-            <br />
-            <label>Choose a Country</label>
+            noodles
+            <h3 style={{color:"#ff0080"}}>Choose a country</h3>
             <select onChange={(e) => random_function(e)}>
               <option>select option</option>
               <option>INDIA</option>
               <option>USA</option>
             </select>
             <br />
-            <label>Select state:</label>
+            <h3 style={{color:"#26004d"}}>select state</h3>
             <select onChange={(e) => f(e)} onKeyDown={handleEnter}>
               <option>--Choose State--</option>
               {state.map((data, i) => {
@@ -201,7 +181,7 @@ const App = () => {
             </select>
             <br></br>
             <button type="submit" onClick={() => submit()}>
-              Submit
+            <h3 style={{color:"#ff0040"}}>submit</h3>
             </button>
           </form>
         </div>
